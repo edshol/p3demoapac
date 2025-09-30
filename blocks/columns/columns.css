@@ -36,6 +36,7 @@
 .columns-wrapper:has(.col-hero) {
   max-width: unset;
   color: white;
+  padding: 0!important;
   background: linear-gradient(103deg, rgb(30, 141, 222) 0%, rgb(20, 88, 145) 100%);
   .button-container > a {
     border: 2px solid;
