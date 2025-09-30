@@ -38,10 +38,10 @@
   color: white;
   padding: 0!important;
   background: linear-gradient(103deg, rgb(30, 141, 222) 0%, rgb(20, 88, 145) 100%);
-  .col-hero > div > div:first-child {
+  .col-hero,.col-red > div > div:first-child {
     padding: 20px;
   }
-  .col-hero > div > div {
+  .col-hero,.col-red > div > div {
     picture > img {
       object-fit: cover;
       height: 500px;
