@@ -38,6 +38,9 @@
   color: white;
   padding: 0!important;
   background: linear-gradient(103deg, rgb(30, 141, 222) 0%, rgb(20, 88, 145) 100%);
+  .col-hero > div > div:first-child {
+    padding: 20px;
+  }
   .button-container > a {
     border: 2px solid;
     background-color: unset;
