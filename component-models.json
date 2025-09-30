@@ -269,9 +269,9 @@
         "description": "The Hero style",
         "valueType": "string",
         "options": [
+          {"name": "Default", "value": ""},
           {"name": "Hero", "value": "col-hero"},
-          {"name": "Red", "value": "bg-green"},
-          {"name": "Blue", "value": "bg-blue"}
+          {"name": "Red", "value": "bg-red"}
         ]
       }
     ]
