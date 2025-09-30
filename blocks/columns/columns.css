@@ -37,7 +37,7 @@
   max-width: unset;
   color: white;
   background: linear-gradient(103deg, rgb(30, 141, 222) 0%, rgb(20, 88, 145) 100%);
-  .button-container {
+  .button-container > a {
     border: 2px solid;
     background-color: unset;
     padding: 8px 36px;
