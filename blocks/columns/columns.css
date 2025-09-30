@@ -35,5 +35,13 @@
 
 .columns-wrapper:has(.col-hero) {
   max-width: unset;
+  color: white;
   background: linear-gradient(103deg, rgb(30, 141, 222) 0%, rgb(20, 88, 145) 100%);
+  .button-container {
+    border: 2px solid;
+    background-color: unset;
+    padding: 8px 36px;
+    color: white;
+    text-decoration: none;
+  }
 }
