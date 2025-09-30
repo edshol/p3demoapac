@@ -271,7 +271,7 @@
         "options": [
           {"name": "Default", "value": ""},
           {"name": "Hero", "value": "col-hero"},
-          {"name": "Red", "value": "bg-red"}
+          {"name": "Red", "value": "col-red"}
         ]
       }
     ]
