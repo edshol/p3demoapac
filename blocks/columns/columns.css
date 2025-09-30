@@ -41,7 +41,7 @@
   .col-hero > div > div:first-child {
     padding: 20px;
   }
-  .col-hero > div > div > picture > img {
+  .col-hero > div > div picture > img {
     object-fit: cover;
     height: 500px;
   }
