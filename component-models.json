@@ -24,6 +24,13 @@
         "value": ""
       },
       {
+        "component": "text",
+        "valueType": "string",
+        "name": "teaserText_descr",
+        "label": "Teaser Descr",
+        "value": ""
+      },
+      {
         "component": "select",
         "name": "classes",
         "value": "",
