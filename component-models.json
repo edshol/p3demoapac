@@ -260,6 +260,19 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
+      },
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Style",
+        "description": "The quote background color",
+        "valueType": "string",
+        "options": [
+          {"name": "Hero", "value": "col-hero"},
+          {"name": "Red", "value": "bg-green"},
+          {"name": "Blue", "value": "bg-blue"}
+        ]
       }
     ]
   },
