@@ -93,8 +93,7 @@
                   "name": "Quote",
                   "model": "quote",
                   "quote": "<p> Think, McFly! Think! </p>",
-                  "author": "Biff Tannen",
-                  "teaserText_title": "Meet the experts"
+                  "author": "Biff Tannen"
                 }
               }
             }
