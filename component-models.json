@@ -188,6 +188,37 @@
     ]
   },
   {
+    "id": "tabs",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Columns"
+      }      
+    ]
+  },
+  {
+    "id": "tab",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
