@@ -215,6 +215,13 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "tabcontent",
+        "label": "tab content",
+        "value": ""
       }
     ]
   },
