@@ -214,7 +214,7 @@
         "valueType": "number",
         "name": "columns",
         "value": "",
-        "label": "Columns"
+        "label": "Tabs"
       },
       {
         "component": "text",
