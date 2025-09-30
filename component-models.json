@@ -21,7 +21,7 @@
         "valueType": "string",
         "name": "teaserText_title",
         "label": "Teaser Title",
-        "value": "hello T Title"
+        "value": ""
       },
       {
         "component": "select",
