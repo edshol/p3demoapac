@@ -263,7 +263,7 @@ main .section.text-center > div > div {
 }
 
 main .section.bg-gray {
-  background-color: #E0E0E0;
-  padding: 21px;
-  margin-bottom: 30px;
+  background-color: #EAEAEA;
+  padding: 30px;
+  padding-bottom: 60px;
 }
