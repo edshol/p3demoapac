@@ -256,10 +256,12 @@ main .section.highlight {
   padding: 40px 0;
 }
 
-main .section.center {
+main .section.center > div > div {
   text-align: center;
 }
 
 main.section.bg-gray {
   background-color: #E0E0E0;
+  padding: 21px;
+  margin-bottom: 30px;
 }
