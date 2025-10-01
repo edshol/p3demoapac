@@ -58,6 +58,16 @@
       "components": [
         "tab"
       ]
+    },
+    {
+      "id": "tab",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title",
+        "fragment"
+      ]
     }
   ]
 }

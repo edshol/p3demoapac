@@ -35,9 +35,10 @@
   {
     "id": "tab",
     "components": [
-      "section",
       "text",
       "image",
+      "button",
+      "title",
       "fragment"
     ]
   },  
