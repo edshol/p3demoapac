@@ -37,7 +37,7 @@
       "fields": [
         {
           "component": "text",
-          "name": "name",
+          "name": "tabname",
           "label": "Tab Name",
           "description": "The label shown for this Tab"
         },
