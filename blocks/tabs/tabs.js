@@ -3,26 +3,32 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
 
-    const tabs = document.querySelectorAll(".tab");
+  const tabs = document.querySelectorAll(".tab");
     
-    tabs.forEach(tab => {
-      const label = tab.querySelector(".tab-label");
-      const content = tab.querySelector(".tab-content");
+  const tabBlocks = document.querySelectorAll(".tabs.block > div");
 
-      label.addEventListener("click", () => {
-        // すべてリセット
-        document.querySelectorAll(".tab-label").forEach(l => l.classList.remove("active"));
-        document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+  tabBlocks.forEach(block => {
+    const label = block.querySelector(":scope > div:nth-child(1)");
+    const content = block.querySelector(":scope > div:nth-child(3)");
 
-        // クリックしたタブをアクティブ化
-        label.classList.add("active");
-        content.classList.add("active");
-      });
+    label.addEventListener("click", () => {
+      // 全部リセット
+      document.querySelectorAll(".tabs.block > div > div:nth-child(1)").forEach(l => l.classList.remove("active"));
+      document.querySelectorAll(".tabs.block > div > div:nth-child(3)").forEach(c => c.classList.remove("active"));
+
+      // 選択タブをアクティブ化
+      label.classList.add("active");
+      content.classList.add("active");
     });
+  });
 
-    // 初期状態: 最初のタブを表示
-    tabs[0].querySelector(".tab-label").classList.add("active");
-    tabs[0].querySelector(".tab-content").classList.add("active");
+  // 初期状態: 最初のタブを表示
+  const firstLabel = document.querySelector(".tabs.block > div:first-child > div:nth-child(1)");
+  const firstContent = document.querySelector(".tabs.block > div:first-child > div:nth-child(3)");
+  if (firstLabel && firstContent) {
+    firstLabel.classList.add("active");
+    firstContent.classList.add("active");
+  }
 
 
 //   /* change to ul, li */

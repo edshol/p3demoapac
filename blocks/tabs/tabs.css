@@ -1,13 +1,14 @@
-.tabs {
+/* 全体 */
+.tabs.block {
   display: flex;
   flex-direction: column;
-  align-items: center; /* 中央寄せ */
-  width: 100%;
+  align-items: center; /* ラベル群を中央寄せ */
   font-family: sans-serif;
+  width: 100%;
 }
 
-/* タブラベルを横並び */
-.tabs .tab-label {
+/* タブラベル（各ブロックの最初のdiv） */
+.tabs.block > div > div:nth-child(1) {
   display: inline-block;
   padding: 10px 20px;
   margin: 0 5px;
@@ -19,14 +20,20 @@
   transition: background 0.2s, color 0.2s;
 }
 
-.tabs .tab-label.active {
+/* アクティブなタブラベル */
+.tabs.block > div > div:nth-child(1).active {
   background: #fff;
   border-bottom: 2px solid #007bff;
   color: #007bff;
 }
 
-/* タブコンテンツ */
-.tabs .tab-content {
+/* 区切りは非表示 */
+.tabs.block > div > div:nth-child(2) {
+  display: none;
+}
+
+/* コンテンツ（3つ目のdiv） */
+.tabs.block > div > div:nth-child(3) {
   display: none;
   width: 80%;
   border: 1px solid #ccc;
@@ -34,8 +41,8 @@
   background: #fff;
 }
 
-/* アクティブコンテンツ表示 */
-.tabs .tab-content.active {
+/* アクティブなコンテンツ */
+.tabs.block > div > div:nth-child(3).active {
   display: block;
 }
 
