@@ -3,7 +3,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
 
-  const tabsBlock = document.querySelector(".tabs.block");
+  const tabsBlock = block.querySelector(".tabs.block");
   if (!tabsBlock) return;
 
   // ラベルバーとコンテンツ領域を作成
