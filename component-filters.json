@@ -33,12 +33,6 @@
     ]
   },
   {
-    "id": "tab",
-    "components": [
-      "columns"
-    ]
-  },
-  {
     "id": "columns",
     "components": [
       "column"
