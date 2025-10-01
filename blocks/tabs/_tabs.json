@@ -36,6 +36,12 @@
       "id": "tab",
       "fields": [
         {
+          "component": "text",
+          "name": "name",
+          "label": "Tab Name",
+          "description": "The label shown for this Tab"
+        },
+        {
           "component": "reference",
           "valueType": "string",
           "name": "image",
