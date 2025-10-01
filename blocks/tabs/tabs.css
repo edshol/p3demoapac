@@ -3,6 +3,7 @@
     gap: 8px;
     max-width: 100%;
     overflow-x: auto;
+    justify-content: center;
   }
   
   .tabs .tabs-list button {
@@ -35,13 +36,17 @@
   }
   
   .tabs .tabs-panel {
-    margin-top: -1px;
-    padding: 0 16px;
-    border: 1px solid var(--dark-color);
+    margin-top: 1px;
+    padding: 10px 16px;
+    border: 1px solid #ccc;
     overflow: auto;
     background-color: white;
   }
   
   .tabs .tabs-panel[aria-hidden="true"] {
     display: none;
+  }
+
+  .tabs-wrapper {
+    max-width: unset!important;
   }
