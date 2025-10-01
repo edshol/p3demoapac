@@ -34,7 +34,6 @@
   "models": [
     {
       "id": "tab",
-      "container": true,
       "fields": [
         {
           "component": "text",
@@ -65,14 +64,6 @@
       "components": [
         "tab"
       ]
-    },
-    {
-      "id": "tab",
-      "components": [
-        "richtext",
-        "title",
-        "image"
-      ]
-    }    
+    }
   ]
 }

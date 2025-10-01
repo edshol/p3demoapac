@@ -168,6 +168,14 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Center",
+            "value": "text-center"
+          },
+          {
+            "name": "BG Gray",
+            "value": "bg-gray"
           }
         ]
       }
