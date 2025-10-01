@@ -1,7 +1,30 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
-// export default function decorate(block) {
+export default function decorate(block) {
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tab");
+    
+    tabs.forEach(tab => {
+      const label = tab.querySelector(".tab-label");
+      const content = tab.querySelector(".tab-content");
+
+      label.addEventListener("click", () => {
+        // すべてリセット
+        document.querySelectorAll(".tab-label").forEach(l => l.classList.remove("active"));
+        document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+
+        // クリックしたタブをアクティブ化
+        label.classList.add("active");
+        content.classList.add("active");
+      });
+    });
+
+    // 初期状態: 最初のタブを表示
+    tabs[0].querySelector(".tab-label").classList.add("active");
+    tabs[0].querySelector(".tab-content").classList.add("active");
+  });
+
 //   /* change to ul, li */
 //   const ul = document.createElement('ul');
 //   [...block.children].forEach((row) => {
@@ -21,4 +44,4 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 //   });
 //   block.textContent = '';
 //   block.append(ul);
-// }
+}
