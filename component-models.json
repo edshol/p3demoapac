@@ -188,44 +188,6 @@
     ]
   },
   {
-    "id": "tabs",
-    "fields": [
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "tabs",
-        "value": "",
-        "label": "Tabs"
-      }      
-    ]
-  },
-  {
-    "id": "tab",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "tabcontent",
-        "label": "tab content",
-        "value": ""
-      }
-    ]
-  },
-  {
     "id": "card",
     "fields": [
       {
@@ -244,6 +206,25 @@
       }
     ]
   },
+  {
+    "id": "tab",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },  
   {
     "id": "columns",
     "fields": [

@@ -33,16 +33,6 @@
     ]
   },
   {
-    "id": "tab",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title",
-      "fragment"
-    ]
-  },  
-  {
     "id": "columns",
     "components": [
       "column"
