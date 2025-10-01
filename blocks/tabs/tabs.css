@@ -1,0 +1,35 @@
+/* ラジオボタンは非表示 */
+.tab-list input[type="radio"] {
+  display: none;
+}
+
+/* ラベルをボタン風に */
+.tab-list label {
+  display: inline-block;
+  padding: 8px 16px;
+  cursor: pointer;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  margin: 0 5px;
+}
+
+/* 選択中のラベル */
+.tab-list input[type="radio"]:checked + label {
+  background: #fff;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+/* コンテンツは非表示 */
+.tabs.block > div {
+  display: none;
+}
+
+/* 1番目のラジオがチェックされたら1番目のコンテンツを表示 */
+.tab-list input:nth-of-type(1):checked ~ .tabs.block > div:nth-of-type(1),
+.tab-list input:nth-of-type(3):checked ~ .tabs.block > div:nth-of-type(2),
+.tab-list input:nth-of-type(5):checked ~ .tabs.block > div:nth-of-type(3) {
+  display: block;
+}

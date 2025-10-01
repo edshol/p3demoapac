@@ -4,34 +4,39 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 export default function decorate(block) {
 
   const tabsBlock = block; //.querySelector(".tabs.block");
-
-//  const tabsBlock = document.querySelector('.tabs.block');
+  //const tabsBlock = document.querySelector('.tabs.block');
   if (!tabsBlock) return;
 
-  // ラベル一覧を収集
   const groups = Array.from(tabsBlock.querySelectorAll(':scope > div'));
   if (groups.length === 0) return;
 
-  // tab-list を作成
   const tabList = document.createElement('div');
   tabList.className = 'tab-list';
-  tabList.setAttribute('role', 'tablist');
+
+  const groupName = 'tabs-' + Math.random().toString(36).substr(2, 5);
 
   groups.forEach((group, index) => {
-    const label = group.querySelector(':scope > div:first-child');
-    if (!label) return;
+    const labelEl = group.querySelector(':scope > div:first-child');
+    if (!labelEl) return;
 
-    const button = document.createElement('button');
-    button.className = 'tabs-tab';
-    button.setAttribute('role', 'tab');
-    button.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
-    button.textContent = label.textContent.trim();
+    const inputId = `${groupName}-tab-${index}`;
 
-    tabList.appendChild(button);
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = groupName;
+    input.id = inputId;
+    if (index === 0) input.checked = true;
+
+    const label = document.createElement('label');
+    label.setAttribute('for', inputId);
+    label.textContent = labelEl.textContent.trim();
+
+    tabList.appendChild(input);
+    tabList.appendChild(label);
   });
 
-  // tabs.block の最初に挿入
   tabsBlock.insertBefore(tabList, tabsBlock.firstChild);
+
 
 
 
