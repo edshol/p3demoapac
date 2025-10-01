@@ -4,8 +4,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 export default function decorate(block) {
 
   const tabsBlock = block; //.querySelector(".tabs.block");
-  tabsBlock.querySelectorAll('.tabs').forEach(tabs => {
-    const items = tabs.querySelectorAll(':scope > div');
+    const items = tabsBlock.querySelectorAll(':scope > div');
 
     items.forEach((item, index) => {
       const label = item.querySelector(':scope > div:first-child');
@@ -19,7 +18,6 @@ export default function decorate(block) {
     if (items.length) {
       items[0].classList.add('active');
     }
-  });
 
 //   /* change to ul, li */
 //   const ul = document.createElement('ul');
