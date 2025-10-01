@@ -27,6 +27,21 @@
     ]
   },
   {
+    "id": "tabs",
+    "components": [
+      "tab"
+    ]
+  },
+  {
+    "id": "tab",
+    "components": [
+      "section",
+      "text",
+      "image",
+      "fragment"
+    ]
+  },  
+  {
     "id": "columns",
     "components": [
       "column"
