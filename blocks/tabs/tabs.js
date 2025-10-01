@@ -18,25 +18,28 @@ export default function decorate(block) {
     const label = group.querySelector(":scope > div:nth-child(1)");
     const content = group.querySelector(":scope > div:nth-child(3)");
 
-    // 新しいコンテナに移動
-    labelsContainer.appendChild(label);
-    contentsContainer.appendChild(content);
+    // クローンして別の場所に配置
+    const labelClone = label.cloneNode(true);
+    const contentClone = content.cloneNode(true);
+
+    labelsContainer.appendChild(labelClone);
+    contentsContainer.appendChild(contentClone);
 
     // クリックイベント
-    label.addEventListener("click", () => {
+    labelClone.addEventListener("click", () => {
       // 全部リセット
       labelsContainer.querySelectorAll("div").forEach(l => l.classList.remove("active"));
       contentsContainer.querySelectorAll("div").forEach(c => c.classList.remove("active"));
 
       // アクティブ化
-      label.classList.add("active");
-      content.classList.add("active");
+      labelClone.classList.add("active");
+      contentClone.classList.add("active");
     });
 
     // 最初のタブを初期表示
     if (index === 0) {
-      label.classList.add("active");
-      content.classList.add("active");
+      labelClone.classList.add("active");
+      contentClone.classList.add("active");
     }
   });
 
