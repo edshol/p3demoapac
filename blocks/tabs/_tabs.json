@@ -64,6 +64,12 @@
       "components": [
         "tab"
       ]
+    },
+    {
+      "id": "tab",
+      "components": [
+        "columns"
+      ]
     }
   ]
 }
