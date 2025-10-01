@@ -83,25 +83,6 @@
       "id": "blocks",
       "components": [
         {
-          "title": "Quote",
-          "id": "quote",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Quote",
-                  "model": "quote",
-                  "quote": "<p> Think, McFly! Think! </p>",
-                  "author": "Biff Tannen by",
-                  "teaserText_title": "default T Title",
-                  "teaaserText_descr": "default T Descr"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Tabs",
           "id": "tabs",
           "plugins": {
@@ -110,7 +91,22 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Tabs",
-                  "columns": "2"
+                  "filter": "tabs"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards",
+          "id": "cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards",
+                  "filter": "cards"
                 }
               }
             }
@@ -133,21 +129,6 @@
           }
         },
         {
-          "title": "Cards",
-          "id": "cards",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Cards",
-                  "filter": "cards"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Card",
           "id": "card",
           "plugins": {
@@ -157,6 +138,25 @@
                 "template": {
                   "name": "Card",
                   "model": "card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Quote",
+          "id": "quote",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Quote",
+                  "model": "quote",
+                  "quote": "<p> Think, McFly! Think! </p>",
+                  "author": "Biff Tannen by",
+                  "teaserText_title": "default T Title",
+                  "teaaserText_descr": "default T Descr"
                 }
               }
             }
