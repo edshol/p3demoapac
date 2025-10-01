@@ -54,29 +54,31 @@ export default function decorate(block) {
   // if (!tabList) return;
 
   const inputs = Array.from(tabList.querySelectorAll('input[type="radio"]'));
-  const tabContents = Array.from(tabsBlock.querySelectorAll('> div:not(.tab-list)'));
 
-  // 最初のタブコンテンツは表示
+  // 元のタブコンテンツは tab-list を除いた子要素
+  const tabContents = Array.from(tabsBlock.children).filter(
+    (el) => !el.classList.contains('tab-list')
+  );
+
+  // 初期表示：最初のタブコンテンツだけ表示
   tabContents.forEach((content, index) => {
     content.style.display = index === 0 ? 'block' : 'none';
   });
 
+  // クリックで切り替え
   inputs.forEach((input, index) => {
     input.addEventListener('change', () => {
       if (!input.checked) return;
 
-      // すべてのタブコンテンツを非表示
       tabContents.forEach((content) => {
         content.style.display = 'none';
       });
 
-      // 対応するタブコンテンツを表示
       if (tabContents[index]) {
         tabContents[index].style.display = 'block';
       }
     });
   });
-
 
 
 
