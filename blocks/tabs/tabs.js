@@ -2,7 +2,7 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-  document.addEventListener("DOMContentLoaded", () => {
+
     const tabs = document.querySelectorAll(".tab");
     
     tabs.forEach(tab => {
@@ -23,7 +23,7 @@ export default function decorate(block) {
     // 初期状態: 最初のタブを表示
     tabs[0].querySelector(".tab-label").classList.add("active");
     tabs[0].querySelector(".tab-content").classList.add("active");
-  });
+
 
 //   /* change to ul, li */
 //   const ul = document.createElement('ul');
