@@ -1,51 +1,47 @@
-/* タブラベル部分 */
-.tab-list {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-/* ラジオボタン自体は非表示 */
-.tab-list input[type="radio"] {
-  display: none;
-}
-
-/* ラベルボタン */
-.tab-list label {
-  padding: 8px 16px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  background: #eee;
-  border-radius: 6px 6px 0 0;
-  user-select: none;
-}
-
-/* 選択中のラベル */
-.tab-list input[type="radio"]:checked + label {
-  background: #fff;
-  border-bottom: 2px solid #007bff;
-  color: #007bff;
-}
-
-/* タブコンテンツ共通 */
-.tab-content {
-  display: none; /* すべて非表示が基本 */
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  padding: 16px;
-  background: #fff;
-}
-
-/* デフォルト表示：最初のタブ */
-.tab-content[data-tab-index="0"] {
-  display: block;
-}
-
-/* ラジオボタンのチェック状態に応じて表示 */
-.tab-list input[type="radio"]:nth-of-type(1):checked ~ .tab-content[data-tab-index="0"],
-.tab-list input[type="radio"]:nth-of-type(3):checked ~ .tab-content[data-tab-index="1"],
-.tab-list input[type="radio"]:nth-of-type(5):checked ~ .tab-content[data-tab-index="2"] {
-  display: block;
-}
+.tabs .tabs-list {
+    display: flex;
+    gap: 8px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .tabs .tabs-list button {
+    flex: 0 0 max-content;
+    margin: 0;
+    border: 1px solid var(--dark-color);
+    border-radius: 0;
+    padding: 8px 16px;
+    background-color: var(--light-color);
+    color: initial;
+    font-size: unset;
+    font-weight: bold;
+    line-height: unset;
+    text-align: initial;
+    text-overflow: unset;
+    overflow: unset;
+    white-space: unset;
+    transition: background-color 0.2s;
+  }
+  
+  .tabs .tabs-list button[aria-selected="true"] {
+    border-bottom: 1px solid var(--background-color);
+    background-color: var(--background-color);
+    cursor: initial;
+  }
+  
+  .tabs .tabs-list button[aria-selected="false"]:hover,
+  .tabs .tabs-list button[aria-selected="false"]:focus {
+    background-color: var(--dark-color);
+  }
+  
+  .tabs .tabs-panel {
+    margin-top: -1px;
+    padding: 0 16px;
+    border: 1px solid var(--dark-color);
+    overflow: auto;
+    background-color: white;
+  }
+  
+  .tabs .tabs-panel[aria-hidden="true"] {
+    display: none;
+  }
