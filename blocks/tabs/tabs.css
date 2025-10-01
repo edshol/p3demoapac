@@ -9,7 +9,7 @@
   .tabs .tabs-list button {
     flex: 0 0 max-content;
     margin: 0;
-    border: 1px solid var(--dark-color);
+    border: 1px solid #ccc;
     border-radius: 0;
     padding: 8px 16px;
     background-color: var(--light-color);
@@ -32,7 +32,7 @@
   
   .tabs .tabs-list button[aria-selected="false"]:hover,
   .tabs .tabs-list button[aria-selected="false"]:focus {
-    background-color: var(--dark-color);
+    background-color: #ccc;
   }
   
   .tabs .tabs-panel {
