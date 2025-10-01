@@ -229,7 +229,7 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 0px 0;
+  margin: 40px 0;
 }
 
 main > .section > div {
@@ -256,7 +256,7 @@ main .section.highlight {
   padding: 40px 0;
 }
 
-main .section.center > div > div {
+main .section.text-center > div > div {
   text-align: center;
 }
 
