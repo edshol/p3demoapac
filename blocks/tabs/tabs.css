@@ -1,48 +1,42 @@
-.tabs.block {
-  width: 100%;
-  font-family: sans-serif;
-}
-
-/* ラベルバー */
-.tab-labels {
+.tabs {
   display: flex;
-  justify-content: center; /* 中央揃え */
-  border-bottom: 1px solid #ccc;
+  flex-direction: column;
+  align-items: center;
 }
 
-.tab-labels > div {
-  padding: 10px 20px;
-  margin: 0 5px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-bottom: none;
-  border-radius: 8px 8px 0 0;
-  background: #eaeaea;
-  transition: background 0.2s, color 0.2s;
-}
-
-.tab-labels > div.active {
-  background: #fff;
-  color: #007bff;
-  border-bottom: 2px solid #007bff;
-}
-
-/* コンテンツ領域 */
-.tab-contents {
+.tabs > div {
   width: 100%;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background: #fff;
-  box-sizing: border-box;
 }
 
-.tab-contents > div {
-  display: none;
+/* タブラベル部分 */
+.tabs > div > div:first-child {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #eee;
+  margin: 0 5px;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
 }
 
-.tab-contents > div.active {
+/* ラベルを中央横並びに */
+.tabs::before {
+  content: "";
   display: block;
   width: 100%;
+  text-align: center;
+}
+.tabs > div {
+  display: none; /* デフォルト非表示 */
+}
+.tabs > div.active {
+  display: block; /* アクティブなタブのみ表示 */
+}
+
+.tabs > div > div:nth-child(3) {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background: #fff;
 }
 
 
