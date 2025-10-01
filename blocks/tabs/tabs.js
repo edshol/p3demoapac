@@ -4,6 +4,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 export default function decorate(block) {
 
   const tabsBlock = block; //.querySelector(".tabs.block");
+
   //const tabsBlock = document.querySelector('.tabs.block');
   if (!tabsBlock) return;
 
@@ -21,22 +22,28 @@ export default function decorate(block) {
 
     const inputId = `${groupName}-tab-${index}`;
 
+    // input radio
     const input = document.createElement('input');
     input.type = 'radio';
     input.name = groupName;
     input.id = inputId;
     if (index === 0) input.checked = true;
 
+    // label
     const label = document.createElement('label');
     label.setAttribute('for', inputId);
     label.textContent = labelEl.textContent.trim();
 
     tabList.appendChild(input);
     tabList.appendChild(label);
+
+    // タブコンテンツに data-tab-index を付与
+    group.setAttribute('data-tab-index', index);
+    group.classList.add('tab-content');
   });
 
+  // tabsBlockの先頭に挿入
   tabsBlock.insertBefore(tabList, tabsBlock.firstChild);
-
 
 
 
