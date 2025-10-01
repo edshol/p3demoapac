@@ -47,6 +47,12 @@
     display: none;
   }
 
+
+  .tabs-tab {
+    p {
+      padding: 0px;
+    }
+  }
   .tabs-wrapper {
     max-width: unset!important;
     padding: 0px!important;
