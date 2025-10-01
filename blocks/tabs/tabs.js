@@ -3,33 +3,47 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
 
-  const tabs = document.querySelectorAll(".tab");
-    
-  const tabBlocks = document.querySelectorAll(".tabs.block > div");
+  const tabsBlock = document.querySelector(".tabs.block");
+  if (!tabsBlock) return;
 
-  tabBlocks.forEach(block => {
-    const label = block.querySelector(":scope > div:nth-child(1)");
-    const content = block.querySelector(":scope > div:nth-child(3)");
+  // ラベルバーとコンテンツ領域を作成
+  const labelsContainer = document.createElement("div");
+  labelsContainer.classList.add("tab-labels");
+  const contentsContainer = document.createElement("div");
+  contentsContainer.classList.add("tab-contents");
 
+  // 既存の構造からラベルとコンテンツを抽出
+  const tabGroups = tabsBlock.querySelectorAll(":scope > div");
+  tabGroups.forEach((group, index) => {
+    const label = group.querySelector(":scope > div:nth-child(1)");
+    const content = group.querySelector(":scope > div:nth-child(3)");
+
+    // 新しいコンテナに移動
+    labelsContainer.appendChild(label);
+    contentsContainer.appendChild(content);
+
+    // クリックイベント
     label.addEventListener("click", () => {
       // 全部リセット
-      document.querySelectorAll(".tabs.block > div > div:nth-child(1)").forEach(l => l.classList.remove("active"));
-      document.querySelectorAll(".tabs.block > div > div:nth-child(3)").forEach(c => c.classList.remove("active"));
+      labelsContainer.querySelectorAll("div").forEach(l => l.classList.remove("active"));
+      contentsContainer.querySelectorAll("div").forEach(c => c.classList.remove("active"));
 
-      // 選択タブをアクティブ化
+      // アクティブ化
       label.classList.add("active");
       content.classList.add("active");
     });
+
+    // 最初のタブを初期表示
+    if (index === 0) {
+      label.classList.add("active");
+      content.classList.add("active");
+    }
   });
 
-  // 初期状態: 最初のタブを表示
-  const firstLabel = document.querySelector(".tabs.block > div:first-child > div:nth-child(1)");
-  const firstContent = document.querySelector(".tabs.block > div:first-child > div:nth-child(3)");
-  if (firstLabel && firstContent) {
-    firstLabel.classList.add("active");
-    firstContent.classList.add("active");
-  }
-
+  // 元のtabs.block内をクリアして新しい構造を追加
+  tabsBlock.innerHTML = "";
+  tabsBlock.appendChild(labelsContainer);
+  tabsBlock.appendChild(contentsContainer);
 
 //   /* change to ul, li */
 //   const ul = document.createElement('ul');

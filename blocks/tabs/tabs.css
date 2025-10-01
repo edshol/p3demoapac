@@ -1,49 +1,49 @@
-/* 全体 */
 .tabs.block {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* ラベル群を中央寄せ */
-  font-family: sans-serif;
   width: 100%;
+  font-family: sans-serif;
 }
 
-/* タブラベル（各ブロックの最初のdiv） */
-.tabs.block > div > div:nth-child(1) {
-  display: inline-block;
+/* ラベルバー */
+.tab-labels {
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  border-bottom: 1px solid #ccc;
+  background: #f5f5f5;
+}
+
+.tab-labels > div {
   padding: 10px 20px;
   margin: 0 5px;
   cursor: pointer;
-  background: #f5f5f5;
   border: 1px solid #ccc;
   border-bottom: none;
   border-radius: 8px 8px 0 0;
+  background: #eaeaea;
   transition: background 0.2s, color 0.2s;
 }
 
-/* アクティブなタブラベル */
-.tabs.block > div > div:nth-child(1).active {
+.tab-labels > div.active {
   background: #fff;
-  border-bottom: 2px solid #007bff;
   color: #007bff;
+  border-bottom: 2px solid #007bff;
 }
 
-/* 区切りは非表示 */
-.tabs.block > div > div:nth-child(2) {
-  display: none;
-}
-
-/* コンテンツ（3つ目のdiv） */
-.tabs.block > div > div:nth-child(3) {
-  display: none;
-  width: 80%;
+/* コンテンツ領域 */
+.tab-contents {
+  width: 100%;
+  padding: 20px;
   border: 1px solid #ccc;
-  padding: 15px;
   background: #fff;
+  box-sizing: border-box;
 }
 
-/* アクティブなコンテンツ */
-.tabs.block > div > div:nth-child(3).active {
+.tab-contents > div {
+  display: none;
+}
+
+.tab-contents > div.active {
   display: block;
+  width: 100%;
 }
 
 
