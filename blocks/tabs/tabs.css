@@ -28,14 +28,19 @@
   color: #007bff;
 }
 
-/* タブコンテンツはデフォルト非表示 */
+/* タブコンテンツ共通 */
 .tab-content {
-  display: none;
+  display: none; /* すべて非表示が基本 */
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #ccc;
   padding: 16px;
   background: #fff;
+}
+
+/* デフォルト表示：最初のタブ */
+.tab-content[data-tab-index="0"] {
+  display: block;
 }
 
 /* ラジオボタンのチェック状態に応じて表示 */
