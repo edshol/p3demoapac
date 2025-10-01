@@ -2,15 +2,16 @@
   width: 100%;
   font-family: sans-serif;
   box-sizing: border-box;
+  text-align: center;
 }
 
-/* タブラベル（横並び中央寄せ） */
+/* タブラベルを横並びに */
 .tabs.block > div {
   display: inline-block;
   vertical-align: top;
 }
 
-/* 各タブラベル */
+/* 各タブラベル（最初の子div） */
 .tabs.block > div > div:first-child {
   display: inline-block;
   padding: 8px 16px;
@@ -20,6 +21,7 @@
   border-bottom: none;
   border-radius: 6px 6px 0 0;
   margin: 0 5px;
+  user-select: none;
 }
 
 /* ホバー中のラベルを強調 */
@@ -28,17 +30,29 @@
   color: #007bff;
 }
 
-/* 全てのコンテンツは非表示 */
+/* タブコンテンツ共通スタイル */
 .tabs.block > div > div:nth-child(3) {
   display: none;
   border: 1px solid #ccc;
   background: #fff;
   padding: 16px;
-  width: 100%;
   box-sizing: border-box;
+  width: 100%;
+  text-align: left;
 }
 
-/* ホバー中のタブのコンテンツだけ表示 */
+/* 最初のタブコンテンツをデフォルト表示 */
+.tabs.block > div:first-child > div:nth-child(3) {
+  display: block;
+}
+
+/* ホバーしているタブのコンテンツを表示 */
 .tabs.block > div:hover > div:nth-child(3) {
   display: block;
+}
+
+/* ホバー中は最初のタブのデフォルト表示を隠す */
+.tabs.block > div:first-child:hover ~ div > div:nth-child(3),
+.tabs.block > div:hover ~ div > div:nth-child(3) {
+  display: none;
 }
