@@ -42,6 +42,7 @@
     overflow: auto;
     background-color: white;
     display: flex;
+    gap: 10px;
     > div {
       flex: 1;
     }
@@ -53,6 +54,7 @@
 
   .tabs .tabs-panel[aria-hidden="false"] {
     display: flex;
+    gap: 10px;
   }
 
 
