@@ -153,9 +153,7 @@
                   "name": "Quote",
                   "model": "quote",
                   "quote": "<p> Think, McFly! Think! </p>",
-                  "author": "Biff Tannen by",
-                  "teaserText_title": "default T Title",
-                  "teaaserText_descr": "default T Descr"
+                  "author": "Biff Tannen"
                 }
               }
             }
