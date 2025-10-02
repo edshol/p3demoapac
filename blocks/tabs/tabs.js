@@ -7,7 +7,7 @@ function hasWrapper(el) {
 
 export default async function decorate(block) {
   console.log("=================================================");
-  console.log("=============== Called Decorate =================");
+  console.log("=============== Called Decorate2 =================");
   // ==== 変更1: 以前の選択状態を block.dataset に保存しておいたものから復元 ====
   const prevSelectedId = block.dataset.selectedTabId;
   console.log('prevSelectedId:', prevSelectedId);
