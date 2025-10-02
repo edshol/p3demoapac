@@ -6,8 +6,13 @@ function hasWrapper(el) {
 }
 
 export default async function decorate(block) {
+  console.log("=================================================");
+  console.log("=============== Called Decorate =================");
   // ==== 変更点1: 以前選択されていたタブIDを取得 ====
   const prevSelectedId = block.querySelector('.tabs-list button[aria-selected="true"]')?.id;
+  console.log('prevSelectedId:', prevSelectedId); // ★ デバッグ出力追加
+  console.log("===============                 =================");
+  console.log("=================================================");
 
   // build tablist
   const tablist = document.createElement('div');
