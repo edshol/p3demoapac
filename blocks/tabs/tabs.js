@@ -6,6 +6,9 @@ function hasWrapper(el) {
 }
 
 export default async function decorate(block) {
+  // ==== 変更点1: 以前選択されていたタブIDを取得 ====
+  const prevSelectedId = block.querySelector('.tabs-list button[aria-selected="true"]')?.id;
+
   // build tablist
   const tablist = document.createElement('div');
   tablist.className = 'tabs-list';
@@ -33,9 +36,16 @@ export default async function decorate(block) {
     button.id = `tab-${id}`;
     button.innerHTML = tab.innerHTML;
     button.setAttribute('aria-controls', `tabpanel-${id}`);
-    button.setAttribute('aria-selected', !i);
+
+    // ==== 変更点2: 過去に選択されていたタブがあれば復元 ====
+    const isSelected = prevSelectedId ? (button.id === prevSelectedId) : (i === 0);
+    button.setAttribute('aria-selected', isSelected);
     button.setAttribute('role', 'tab');
     button.setAttribute('type', 'button');
+
+    // ==== 変更点3: 初期パネル表示も合わせて更新 ====
+    tabpanel.setAttribute('aria-hidden', !isSelected);
+
     button.addEventListener('click', () => {
       block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
         panel.setAttribute('aria-hidden', true);
@@ -46,6 +56,7 @@ export default async function decorate(block) {
       tabpanel.setAttribute('aria-hidden', false);
       button.setAttribute('aria-selected', true);
     });
+
     tablist.append(button);
     tab.remove();
   });
