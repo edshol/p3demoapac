@@ -6,10 +6,10 @@ function hasWrapper(el) {
 }
 
 export default async function decorate(block) {
-  console.log("=================================================");
-  console.log("=============== Called Decorate2 =================");
-  // ==== 変更1: 以前の選択状態を block.dataset に保存しておいたものから復元 ====
-  const prevSelectedId = block.dataset.selectedTabId;
+  // section を取得（親にあたる要素）
+  const section = block.closest('.section');
+  // ==== 変更1: 以前の選択状態を section.dataset に保持 ====
+  const prevSelectedId = section?.dataset.selectedTabId;
   console.log('prevSelectedId:', prevSelectedId);
 
   // build tablist
@@ -59,9 +59,11 @@ export default async function decorate(block) {
       tabpanel.setAttribute('aria-hidden', false);
       button.setAttribute('aria-selected', true);
 
-      // ==== 変更4: 選択状態を block.dataset に保存 ====
-      block.dataset.selectedTabId = button.id;
-      console.log('保存した selectedTabId:', block.dataset.selectedTabId);
+      // ==== 変更4: 選択状態を section.dataset に保存 ====
+      if (section) {
+        section.dataset.selectedTabId = button.id;
+        console.log('保存した selectedTabId:', section.dataset.selectedTabId);
+      }
     });
 
     tablist.append(button);
